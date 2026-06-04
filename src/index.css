@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg:        #0f1117;
+  --border:    rgba(255,255,255,0.10);
+  --border2:   rgba(255,255,255,0.18);
+  --coral:     #f0a898;
+  --coral-dim: rgba(240,168,152,0.11);
+  --coral-mid: rgba(240,168,152,0.24);
+  --cream:     #ffffff;
+  --text:      #e8e3dc;
+  --muted:     #b8b3ac;
+  --muted2:    #6a6460;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .nav-desktop       { display: none !important; }
+  .nav-mobile-toggle { display: flex !important; }
+  .s-wrap            { padding: 48px 24px 40px !important; }
+  .proj-grid         { grid-template-columns: 1fr !important; }
+  .wf-grid           { grid-template-columns: 1fr !important; }
+  .sk-grid           { grid-template-columns: 1fr !important; }
+  .contact-grid      { grid-template-columns: 1fr !important; gap: 40px !important; }
+}
