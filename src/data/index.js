@@ -2,20 +2,24 @@ export const projects = [
   {
     id: 1, num: "01",
     name: "Tareka",
-    tagline: "Kenya's recycling ecosystem platform",
-    description: "Centralises recycling companies, digitises intake processes, and rewards contributors with tokens via Kotani Pay. Built on FastAPI with PostgreSQL, containerised with Docker.",
-    stack: ["FastAPI", "PostgreSQL", "Next.js", "Redis", "Docker", "GitHub Actions"],
-    github: "https://github.com/YOUR_USERNAME/tareka",
-    live: "https://tareka.vercel.app",
+    tagline: "Verified recycling infrastructure and impact tracking platform",
+    problem: "Kenya's recycling industry has no centralised system — companies operate in silos, contributors get no visibility, and intake is entirely manual.",
+    solution: "A platform that digitises recycling company intake, tracks contributor activity, and rewards participation via Kotani Pay token integration. Built on FastAPI with PostgreSQL, containerised with Docker.",
+    stack: ["FastAPI", "PostgreSQL", "Next.js", "Redis"],
+    image: "/tareka.jpg",
+    github: "",
+    live: "https://tareka.vercel.app/",
   },
   {
     id: 2, num: "02",
     name: "TerraFold Trace",
-    tagline: "Agricultural data traceability system",
-    description: "Tracks produce from farmer through harvest, batch, aggregation to warehouse and buyer purchase orders. Full audit trail from field to invoice.",
+    tagline: "Supply chain traceability and sustainability intelligence platform",
+    problem: "Produce moves through multiple hands — farmer, aggregator, warehouse, buyer — with no traceability, making quality disputes and fraud nearly impossible to resolve.",
+    solution: "A role-based traceability system that tracks every batch from farm to buyer with timestamped records, status updates, and purchase order management. Full audit trail from field to invoice.",
     stack: ["React", "Flask", "SQLAlchemy", "PostgreSQL", "JWT"],
-    github: "https://github.com/YOUR_USERNAME/terrafold-trace",
-    live: "",
+    image: "/terrafold.jpg",
+    github: "",
+    live: "https://terrafold-frontend.onrender.com/login",
   },
 ]
 
@@ -24,7 +28,8 @@ export const workflows = [
     id: 1, num: "01",
     name: "Lead Intelligence",
     tagline: "Revenue intake automation",
-    description: "Inbound leads are often manually reviewed, inconsistently prioritized, and delayed in response — resulting in lost conversion opportunities. This system ingests every lead instantly, applies AI-based scoring to evaluate intent and quality, and routes each lead into structured pipelines (Hot, Warm, Cold) with automated follow-up actions. Every lead is logged, classified, and acted on in real time, ensuring no opportunity is missed.",
+    problem: "Inbound leads are manually reviewed, inconsistently prioritised, and delayed in response — resulting in lost conversion opportunities.",
+    solution: "This system ingests every lead instantly, applies AI-based scoring to evaluate intent and quality, and routes each into structured pipelines (Hot, Warm, Cold) with automated follow-up actions. Every lead is logged, classified, and acted on in real time.",
     tools: ["n8n", "OpenAI GPT-4o", "Google Sheets", "Gmail", "Slack", "Webhook"],
     github: "https://github.com/YOUR_USERNAME/n8n-lead-intelligence-engine",
     notion: "https://YOUR_NOTION_CASE_STUDY_LINK",
@@ -36,7 +41,8 @@ export const workflows = [
     id: 2, num: "02",
     name: "Operational Workflow",
     tagline: "Internal operations routing",
-    description: "Internal business requests such as onboarding, task assignments, and escalations are typically scattered across email and chat tools, leading to delays and unclear ownership. This system captures all incoming operational requests, uses AI to classify the request type and urgency, and routes it into the correct departmental queue with defined priority levels. Each request is tracked through its lifecycle with automated notifications to ensure accountability and resolution speed.",
+    problem: "Internal requests — onboarding, task assignments, escalations — are scattered across email and chat, leading to delays and unclear ownership.",
+    solution: "Captures all incoming operational requests, uses AI to classify type and urgency, and routes each into the correct departmental queue with defined priority levels. Every request is tracked through its lifecycle with automated notifications.",
     tools: ["n8n", "OpenAI GPT-4o", "Google Sheets", "Gmail", "Slack", "Switch Node"],
     github: "https://github.com/YOUR_USERNAME/n8n-ops-workflow-engine",
     notion: "",
@@ -48,7 +54,8 @@ export const workflows = [
     id: 3, num: "03",
     name: "Supplier Compliance Automation",
     tagline: "Enterprise governance and risk management",
-    description: "Supplier onboarding processes are often manual, inconsistent, and lack proper auditability, creating risk exposure and compliance gaps. This system evaluates each supplier submission using AI-driven risk scoring combined with rule-based validation for documentation completeness and fraud indicators. Based on the evaluation, suppliers are automatically routed into Approved, Review, or Rejected pipelines, with every decision logged in an immutable audit trail for full traceability and compliance reporting.",
+    problem: "Supplier onboarding is manual, inconsistent, and lacks auditability — creating risk exposure and compliance gaps.",
+    solution: "Evaluates each supplier using AI-driven risk scoring combined with rule-based validation for documentation completeness and fraud indicators. Suppliers are automatically routed into Approved, Review, or Rejected pipelines with a full immutable audit trail.",
     tools: ["n8n", "OpenAI GPT-4o", "Google Sheets", "Gmail", "Slack", "Compliance Rules Engine"],
     github: "https://github.com/YOUR_USERNAME/n8n-supplier-compliance-engine",
     notion: "",
@@ -59,17 +66,8 @@ export const workflows = [
 ]
 
 export const skills = {
-  "Backend": [
-    "Python", "FastAPI", "Flask", "PostgreSQL", 
-    "SQLAlchemy", "REST APIs", "pytest"
-  ],
-  "Frontend": [
-    "React", "Nextjs", "HTML/CSS", "Tailwind"
-  ],
-  "Automation & AI": [
-    "n8n", "OpenAI GPT-4o", 
-    "Anthropic Claude" ],
-  "Tools": [
-    "Git", "GitHub", "Docker", "Postman", "Google Sheets API", "Notion"
-  ],
+  "Backend": ["Python", "FastAPI", "Flask", "PostgreSQL", "SQLAlchemy", "REST APIs", "pytest"],
+  "Frontend": ["React", "Nextjs", "HTML/CSS", "Tailwind"],
+  "Automation & AI": ["n8n", "OpenAI GPT-4o", "Anthropic Claude"],
+  "Tools": ["Git", "GitHub", "Docker", "Postman", "Google Sheets API", "Notion"],
 }

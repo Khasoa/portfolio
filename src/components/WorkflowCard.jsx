@@ -34,7 +34,7 @@ export default function WorkflowCard({ workflow, isLast }) {
     <div
       style={{
         padding: "22px 24px",
-        borderLeft: `2px solid ${hov ? "var(--coral)" : "transparent"}`,
+        borderLeft: `2px solid ${hov ? "var(--accent)" : "transparent"}`,
         borderRight: isLast ? "none" : "1px solid var(--border)",
         opacity: 1,
         transition: "border-left-color 0.18s, opacity 0.18s",
