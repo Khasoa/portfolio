@@ -7,7 +7,7 @@ export default function ProjectCard({ project, isLast }) {
     <div
       style={{
         padding: "26px 28px",
-        borderLeft: `2px solid ${hov ? "var(--coral)" : "transparent"}`,
+        borderLeft: `2px solid ${hov ? "var(--accent)" : "transparent"}`,
         borderRight: isLast ? "none" : "1px solid var(--border)",
         cursor: "default",
         transition: "border-left-color 0.18s",
@@ -47,7 +47,7 @@ export default function ProjectCard({ project, isLast }) {
             padding: "2px 8px", border: "1px solid var(--border)",
             transition: "color 0.18s, border-color 0.18s",
           }}
-            onMouseEnter={e => { e.target.style.color = "var(--coral)"; e.target.style.borderColor = "var(--coral-mid)"; }}
+            onMouseEnter={e => { e.target.style.color = "var(--accent)"; e.target.style.borderColor = "var(--accent-mid)"; }}
             onMouseLeave={e => { e.target.style.color = "var(--muted2)"; e.target.style.borderColor = "var(--border)"; }}
           >
             GitHub ↗
@@ -60,7 +60,7 @@ export default function ProjectCard({ project, isLast }) {
             padding: "2px 8px", border: "1px solid var(--border)",
             transition: "color 0.18s, border-color 0.18s",
           }}
-            onMouseEnter={e => { e.target.style.color = "var(--coral)"; e.target.style.borderColor = "var(--coral-mid)"; }}
+            onMouseEnter={e => { e.target.style.color = "var(--accent)"; e.target.style.borderColor = "var(--accent-mid)"; }}
             onMouseLeave={e => { e.target.style.color = "var(--muted2)"; e.target.style.borderColor = "var(--border)"; }}
           >
             Live ↗
