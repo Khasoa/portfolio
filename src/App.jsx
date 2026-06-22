@@ -10,20 +10,20 @@ import Divider   from "./components/Divider"
 
 export default function App() {
   return (
-    <div style={{ background:"var(--bg)", minHeight:"100vh" }}>
-      <Navbar/>
-      <Hero/>
-      <Divider/>
-      <About/>
-      <Divider/>
-      <Projects/>
-      <Divider/>
-      <Workflows/>
-      <Divider/>
-      <Skills/>
-      <Divider/>
-      <Contact/>
-      <Footer/>
+    <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
+      <Navbar />
+      <Hero />
+      <Divider />
+      <About />
+      <Divider />
+      <Projects />
+      <Divider />
+      <Workflows />
+      <Divider />
+      <Skills />
+      <Divider />
+      <Contact />
+      <Footer />
     </div>
   )
 }
