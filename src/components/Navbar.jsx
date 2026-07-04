@@ -16,56 +16,57 @@ export default function Navbar() {
       alignItems: "center",
       justifyContent: "space-between",
       padding: "0 var(--section-x)",
-      background: "rgba(5, 5, 5, 0.88)",
+      background: "rgba(244, 246, 249, 0.90)",
       borderBottom: "1px solid var(--border)",
       backdropFilter: "blur(16px)",
     }}>
       <a href="#hero" style={{
-        fontFamily: "var(--font-serif)",
-        fontSize: "17px",
-        color: "var(--cream)",
-        fontWeight: 400,
+        fontFamily: "var(--font-display)",
+        fontSize: "16px",
+        color: "var(--text)",
+        fontWeight: 700,
         textDecoration: "none",
+        letterSpacing: "-0.02em",
       }}>Lydia Khasoa</a>
 
-      <ul className="nav-desktop" style={{ display: "flex", gap: "28px", listStyle: "none" }}>
+      <ul className="nav-desktop" style={{ display: "flex", gap: "28px", listStyle: "none", alignItems: "center" }}>
         {links.map(l => (
           <li key={l}>
-            <a
-              href={`#${l.toLowerCase()}`}
-              style={{
-                fontSize: "11px",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "var(--muted)",
-                textDecoration: "none",
-                transition: "color 0.18s",
-              }}
-              onMouseEnter={e => { e.target.style.color = "var(--accent)" }}
-              onMouseLeave={e => { e.target.style.color = "var(--muted)" }}
-            >{l}</a>
+            <a href={`#${l.toLowerCase()}`} className="nav-link">{l}</a>
           </li>
         ))}
       </ul>
 
-      <button
-        className="nav-mobile-toggle"
-        onClick={() => setOpen(!open)}
-        style={{
-          display: "none",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "none",
-          border: "none",
-          color: "var(--muted)",
-          cursor: "pointer",
-          padding: "8px",
-        }}
-        aria-label="Toggle menu"
-        aria-expanded={open}
-      >
-        {open ? <X size={20} /> : <Menu size={20} />}
-      </button>
+      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+        <a
+          href="https://calendly.com/khasoalydia/30min"
+          target="_blank"
+          rel="noreferrer"
+          className="nav-cv-btn btn btn-primary"
+          style={{ display: "none", padding: "9px 18px", minHeight: "36px", fontSize: "11px" }}
+        >
+          Book a Call
+        </a>
+
+        <button
+          className="nav-mobile-toggle"
+          onClick={() => setOpen(!open)}
+          style={{
+            display: "none",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "none",
+            border: "none",
+            color: "var(--muted)",
+            cursor: "pointer",
+            padding: "8px",
+          }}
+          aria-label="Toggle menu"
+          aria-expanded={open}
+        >
+          {open ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
 
       {open && (
         <div style={{
@@ -98,8 +99,32 @@ export default function Navbar() {
               }}
             >{l}</a>
           ))}
+          <a
+            href="https://calendly.com/khasoalydia/30min"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setOpen(false)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "14px 0",
+              fontSize: "13px",
+              fontWeight: 600,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              color: "var(--accent)",
+              textDecoration: "none",
+              minHeight: "44px",
+            }}
+          >Book a Call</a>
         </div>
       )}
+
+      <style>{`
+        @media (min-width: 769px) {
+          .nav-cv-btn { display: inline-flex !important; }
+        }
+      `}</style>
     </nav>
   )
 }

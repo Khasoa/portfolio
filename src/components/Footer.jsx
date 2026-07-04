@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div>
-        <span style={{ fontFamily: "var(--font-serif)", fontSize: "15px", color: "var(--muted2)" }}>
+        <span style={{ fontFamily: "var(--font-display)", fontSize: "15px", fontWeight: 600, color: "var(--muted2)" }}>
           Lydia Khasoa
         </span>
         <span style={{
@@ -13,7 +13,7 @@ export default function Footer() {
           fontFamily: "var(--font-mono)", fontSize: "10px",
           color: "var(--muted2)", letterSpacing: "0.04em",
         }}>
-          Systems · Automation · Engineering
+          Development · Automation · Virtual Ops
         </span>
       </div>
       <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
@@ -22,7 +22,7 @@ export default function Footer() {
         <a href="https://calendly.com/khasoalydia/30min" target="_blank" rel="noreferrer" aria-label="Book a call"><CalendarDays size={17} /></a>
       </div>
       <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "var(--muted2)", letterSpacing: "0.04em" }}>
-        © 2026 · built with react
+        © 2026 · built with react... and lots of hot chocolate!
       </span>
     </footer>
   )

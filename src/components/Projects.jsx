@@ -4,55 +4,24 @@ import SectionHeader from "./SectionHeader"
 import SectionLayout from "./SectionLayout"
 
 function ExpandToggle({ open, onClick }) {
-  const [h, setH] = useState(false)
   return (
-    <button
-      onClick={onClick}
-      onMouseEnter={() => setH(true)}
-      onMouseLeave={() => setH(false)}
-      style={{
-        display: "flex", alignItems: "center", gap: "6px",
-        fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: "0.06em",
-        color: h || open ? "var(--accent)" : "var(--muted2)",
-        background: "none", border: "none", cursor: "pointer",
-        padding: "0 0 24px", transition: "color 0.18s", minHeight: "44px",
-      }}
-    >
+    <button onClick={onClick} className="proj-expand">
       <span>{open ? "Show less" : "See solution"}</span>
-      <span style={{ color: "var(--accent)", display: "inline-block", transition: "transform 0.25s", transform: open ? "rotate(90deg)" : "none", fontSize: "11px" }}>→</span>
+      <span className="proj-expand-arrow" style={{ transform: open ? "rotate(90deg)" : "none" }}>→</span>
     </button>
   )
 }
 
-function ProjectCard({ project, isLast }) {
-  const [h, setH] = useState(false)
+function ProjectCard({ project }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div
-      className={`proj-card card-item${h || open ? " card-item--active" : ""}`}
-      onMouseEnter={() => setH(true)}
-      onMouseLeave={() => setH(false)}
-      style={{
-        borderLeft: `2px solid ${h || open ? "var(--accent)" : "transparent"}`,
-        borderRight: isLast ? "none" : "1px solid var(--border)",
-        transition: "border-left-color 0.2s, background 0.2s",
-        overflow: "hidden",
-      }}
-    >
-      <div style={{ padding: "clamp(24px, 3vw, 32px) clamp(24px, 3vw, 32px) 0" }}>
-        <div className="meta-label" style={{ marginBottom: "10px" }}>{project.num}</div>
+    <article className={`proj-card${open ? " proj-card--open" : ""}`}>
+      <div className="proj-card-inner">
+        <div className="meta-label proj-num">{project.num}</div>
 
-        <div style={{
-          fontFamily: "var(--font-serif)", fontSize: "clamp(22px, 2.5vw, 26px)",
-          fontWeight: 400, color: "var(--cream)", letterSpacing: "-0.02em",
-          marginBottom: "6px", lineHeight: 1.2,
-        }}>{project.name}</div>
-
-        <div style={{
-          fontSize: "var(--text-sm)", fontWeight: 300, fontStyle: "italic",
-          color: "var(--text)", marginBottom: "16px", lineHeight: 1.5,
-        }}>{project.tagline}</div>
+        <h3 className="proj-title">{project.name}</h3>
+        <p className="proj-tagline">{project.tagline}</p>
 
         {project.image ? (
           <div className="proj-image-frame">
@@ -60,38 +29,41 @@ function ProjectCard({ project, isLast }) {
           </div>
         ) : (
           <div className="proj-image-frame">
-            <span className="meta-label" style={{ letterSpacing: "0.08em" }}>screenshot coming soon</span>
+            <span className="meta-label">screenshot coming soon</span>
           </div>
         )}
 
-        <div style={{ marginBottom: "14px" }}>
-          <div className="status-label" style={{ color: "var(--status-problem)", marginBottom: "6px" }}>Problem</div>
-          <p style={{ fontSize: "var(--text-sm)", fontWeight: 300, color: "var(--muted)", lineHeight: "var(--leading-normal)" }}>
-            {project.problem}
-          </p>
+        {project.live && (
+          <a href={project.live} target="_blank" rel="noreferrer" className="proj-live-link">
+            View live site →
+          </a>
+        )}
+
+        <div className="proj-block">
+          <div className="status-label proj-problem-label">Problem</div>
+          <p className="proj-text">{project.problem}</p>
         </div>
 
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "12px" }}>
-          {project.stack.map(t => <span key={t} className="tag">{t}</span>)}
+        <div className="proj-stack">
+          <div className="proj-stack-label">Stack</div>
+          <p className="proj-stack-list">{project.stack.join(" · ")}</p>
         </div>
 
         <ExpandToggle open={open} onClick={() => setOpen(!open)} />
       </div>
 
-      <div style={{ maxHeight: open ? "320px" : "0px", overflow: "hidden", transition: "max-height 0.35s ease" }}>
-        <div style={{ padding: "0 clamp(24px, 3vw, 32px) clamp(24px, 3vw, 32px)" }}>
-          <div style={{ height: "1px", background: "var(--border)", marginBottom: "16px" }} />
-          <div className="status-label" style={{ color: "var(--status-solution)", marginBottom: "6px" }}>Solution</div>
-          <p style={{ fontSize: "var(--text-sm)", fontWeight: 300, color: "var(--muted)", lineHeight: "var(--leading-normal)", marginBottom: "16px" }}>
-            {project.solution}
-          </p>
-          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-            {project.github && <a href={project.github} target="_blank" rel="noreferrer" className="link-chip">GitHub ↗</a>}
-            {project.live && <a href={project.live} target="_blank" rel="noreferrer" className="link-chip">Live ↗</a>}
-          </div>
+      <div className="proj-solution-panel" style={{ maxHeight: open ? "340px" : "0px" }}>
+        <div className="proj-solution-inner">
+          <div className="status-label proj-solution-label">Solution</div>
+          <p className="proj-text">{project.solution}</p>
+          {project.github && (
+            <div className="proj-links">
+              <a href={project.github} target="_blank" rel="noreferrer" className="link-chip">GitHub ↗</a>
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </article>
   )
 }
 
@@ -100,16 +72,114 @@ export default function Projects() {
     <section id="projects" className="s-wrap">
       <style>{`
         .proj-shell {
-          border: 1px solid var(--border);
           border-radius: var(--radius-lg);
           overflow: hidden;
-          background: var(--surface);
-          box-shadow: var(--shadow-sm);
+          background: var(--surface-raised);
+          box-shadow: var(--shadow-card);
         }
         .proj-grid { display: grid; grid-template-columns: 1fr 1fr; }
+        .proj-card {
+          position: relative;
+          border-right: 1px solid var(--border);
+        }
+        .proj-card:last-child { border-right: none; }
+        .proj-card-inner {
+          padding: clamp(28px, 3.5vw, 36px) clamp(28px, 3.5vw, 36px) 0;
+        }
+        .proj-num { margin-bottom: 12px; }
+        .proj-title {
+          font-family: var(--font-display);
+          font-size: clamp(22px, 2.5vw, 26px);
+          font-weight: 700;
+          color: var(--text);
+          letter-spacing: -0.02em;
+          line-height: 1.2;
+          margin: 0 0 8px;
+        }
+        .proj-tagline {
+          font-size: var(--text-sm);
+          font-weight: 400;
+          font-style: italic;
+          color: var(--muted);
+          line-height: var(--leading-normal);
+          margin: 0 0 clamp(20px, 2.5vw, 24px);
+        }
+        .proj-live-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          margin: -8px 0 clamp(18px, 2.5vw, 22px);
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: var(--accent);
+        }
+        .proj-block { margin-bottom: 20px; }
+        .proj-problem-label { color: var(--status-problem); margin-bottom: 8px; }
+        .proj-solution-label { color: var(--status-solution); margin-bottom: 8px; }
+        .proj-text {
+          font-size: var(--text-sm);
+          font-weight: 400;
+          color: var(--muted);
+          line-height: var(--leading-normal);
+          margin: 0;
+        }
+        .proj-stack {
+          margin-bottom: 14px;
+        }
+        .proj-stack-label {
+          font-family: var(--font-mono);
+          font-size: 9px;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--muted2);
+          margin-bottom: 6px;
+        }
+        .proj-stack-list {
+          font-size: 11px;
+          line-height: 1.55;
+          color: var(--muted);
+          margin: 0;
+        }
+        .proj-expand {
+          display: flex; align-items: center; gap: 6px;
+          font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+          letter-spacing: 0.06em;
+          color: var(--accent);
+          background: none; border: none; cursor: pointer;
+          padding: 0 0 clamp(28px, 3.5vw, 36px);
+          min-height: 44px;
+        }
+        .proj-expand-arrow {
+          color: var(--accent);
+          transition: transform 0.25s ease;
+          font-size: 11px;
+        }
+        .proj-solution-panel {
+          overflow: hidden;
+          transition: max-height 0.35s ease;
+        }
+        .proj-solution-inner {
+          padding: 0 clamp(28px, 3.5vw, 36px) clamp(28px, 3.5vw, 36px);
+          border-top: 1px solid var(--border);
+          padding-top: 20px;
+          margin-top: 4px;
+        }
+        .proj-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+
         @media (max-width: 768px) {
-          .proj-grid .proj-card { border-right: none !important; border-bottom: 1px solid var(--border); }
-          .proj-grid .proj-card:last-child { border-bottom: none; }
+          .proj-grid { grid-template-columns: 1fr; }
+          .proj-card {
+            border-right: none;
+            border-bottom: 1px solid var(--border);
+          }
+          .proj-card:last-child { border-bottom: none; }
+          .proj-card-inner { padding: 28px 24px 0; }
+          .proj-solution-inner { padding: 0 24px 28px; }
         }
       `}</style>
 
@@ -117,7 +187,7 @@ export default function Projects() {
         <SectionHeader eyebrow="Engineering work" title="Projects" description="Full-stack applications and backend systems built for real problems." />
         <div className="proj-shell">
           <div className="proj-grid">
-            {projects.map((p, i) => <ProjectCard key={p.id} project={p} isLast={i === projects.length - 1} />)}
+            {projects.map(p => <ProjectCard key={p.id} project={p} />)}
           </div>
         </div>
       </SectionLayout>

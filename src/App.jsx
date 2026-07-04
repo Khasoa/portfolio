@@ -1,28 +1,30 @@
-import Navbar    from "./components/Navbar"
-import Hero      from "./components/Hero"
-import About     from "./components/About"
-import Projects  from "./components/Projects"
-import Workflows from "./components/Workflows"
-import Skills    from "./components/Skills"
-import Contact   from "./components/Contact"
-import Footer    from "./components/Footer"
-import Divider   from "./components/Divider"
+import Navbar      from "./components/Navbar"
+import Hero        from "./components/Hero"
+import ScopeOfWork from "./components/ScopeOfWork"
+import About       from "./components/About"
+import Projects    from "./components/Projects"
+import Workflows   from "./components/Workflows"
+import Skills      from "./components/Skills"
+import Contact     from "./components/Contact"
+import Footer      from "./components/Footer"
 
 export default function App() {
   return (
     <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
       <Navbar />
       <Hero />
-      <Divider />
-      <About />
-      <Divider />
+      <ScopeOfWork />
+      <div className="section-band">
+        <About />
+      </div>
       <Projects />
-      <Divider />
-      <Workflows />
-      <Divider />
+      <div className="section-band">
+        <Workflows />
+      </div>
       <Skills />
-      <Divider />
-      <Contact />
+      <div className="section-band">
+        <Contact />
+      </div>
       <Footer />
     </div>
   )
