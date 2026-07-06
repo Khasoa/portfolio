@@ -1,3 +1,10 @@
+import leadWorkflowImg from "../assets/n8n-lead-management-workflow.jpg"
+import operationalWorkflowImg from "../assets/n8n-operational-workflow.jpg"
+import supplierWorkflowImg from "../assets/n8n-supplier-compliance-workflow.jpg"
+import leadDemo from "../assets/lead-management-workflow-automation.mp4"
+import operationalDemo from "../assets/operational-requests-workflow-automation.mp4"
+import supplierDemo from "../assets/supplier-compliance-system-automation-workflow.mp4"
+
 export const projects = [
   {
     id: 1, num: "01",
@@ -15,7 +22,7 @@ export const projects = [
     name: "TerraFold Trace",
     tagline: "Supply chain traceability and sustainability intelligence platform",
     problem: "Produce moves through multiple hands — farmer, aggregator, warehouse, buyer — with no traceability, making quality disputes and fraud nearly impossible to resolve.",
-    solution: "A role-based traceability system that tracks every batch from farm to buyer with timestamped records, status updates, and purchase order management. Full audit trail from field to invoice.",
+    solution: "A role-based traceability system that tracks every batch from farm to buyer with timestamped records, status updates, and purchase order management. Full audit trail from field to invoice. (Associated with Moringa School's capstone project)",
     stack: ["React", "Flask", "SQLAlchemy", "PostgreSQL", "JWT"],
     image: "/terrafold.jpg",
     github: "",
@@ -31,6 +38,8 @@ export const workflows = [
     problem: "Inbound leads are manually reviewed, inconsistently prioritised, and delayed in response — resulting in lost conversion opportunities.",
     solution: "This system ingests every lead instantly, applies AI-based scoring to evaluate intent and quality, and routes each into structured pipelines (Hot, Warm, Cold) with automated follow-up actions. Every lead is logged, classified, and acted on in real time.",
     tools: ["n8n", "OpenAI GPT-4o", "Google Sheets", "Gmail", "Slack", "Webhook"],
+    image: leadWorkflowImg,
+    demo: leadDemo,
     notion: "https://YOUR_NOTION_CASE_STUDY_LINK",
     live: "",
     comingSoon: false,
@@ -43,6 +52,8 @@ export const workflows = [
     problem: "Internal requests — onboarding, task assignments, escalations — are scattered across email and chat, leading to delays and unclear ownership.",
     solution: "Captures all incoming operational requests, uses AI to classify type and urgency, and routes each into the correct departmental queue with defined priority levels. Every request is tracked through its lifecycle with automated notifications.",
     tools: ["n8n", "OpenAI GPT-4o", "Google Sheets", "Gmail", "Slack", "Switch Node"],
+    image: operationalWorkflowImg,
+    demo: operationalDemo,
     notion: "",
     live: "",
     comingSoon: false,
@@ -55,6 +66,8 @@ export const workflows = [
     problem: "Supplier onboarding is manual, inconsistent, and lacks auditability — creating risk exposure and compliance gaps.",
     solution: "Evaluates each supplier using AI-driven risk scoring combined with rule-based validation for documentation completeness and fraud indicators. Suppliers are automatically routed into Approved, Review, or Rejected pipelines with a full immutable audit trail.",
     tools: ["n8n", "OpenAI GPT-4o", "Google Sheets", "Gmail", "Slack", "Compliance Rules Engine"],
+    image: supplierWorkflowImg,
+    demo: supplierDemo,
     github: "https://github.com/YOUR_USERNAME/n8n-supplier-compliance-engine",
     notion: "",
     live: "",

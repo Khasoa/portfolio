@@ -1,42 +1,65 @@
 import SectionHeader from "./SectionHeader"
 import SectionLayout from "./SectionLayout"
 
-const scopeItems = ["Full-stack", "Backend-focused", "Systems & automation"]
+const scopeItems = ["Software development", "Workflow automation", "Virtual exec support"]
 
 export default function About() {
   return (
-    <section id="about" className="s-wrap">
+    <section id="about" className="s-wrap s-wrap--about">
       <style>{`
-        .about-intro { max-width: 600px; margin-bottom: clamp(28px, 4vw, 36px); }
+        .about-intro {
+          max-width: 560px;
+          margin-bottom: clamp(36px, 5vw, 48px);
+        }
         .about-lead {
-          font-family: var(--font-serif);
+          font-family: var(--font-display);
           font-size: clamp(20px, 2.4vw, 26px);
-          font-weight: 400; line-height: 1.45; color: var(--cream);
-          letter-spacing: -0.015em; margin-bottom: 20px;
+          font-weight: 600;
+          line-height: 1.55;
+          color: var(--text);
+          letter-spacing: -0.02em;
+          margin-bottom: 24px;
         }
         .about-scope {
-          display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px;
-          font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--muted2);
+          display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+          font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+          letter-spacing: 0.06em; color: var(--muted2);
         }
-        .about-scope-item { display: inline-flex; align-items: center; gap: 7px; }
-        .about-scope-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-        .about-scope-sep { color: var(--border-strong); user-select: none; }
-        .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.5vw, 24px); }
+        .about-scope-item { display: inline-flex; align-items: center; gap: 8px; }
+        .about-scope-dot {
+          width: 4px; height: 4px; border-radius: 50%;
+          background: var(--accent); flex-shrink: 0;
+        }
+        .about-scope-sep { color: var(--border-strong); user-select: none; opacity: 0.6; }
+        .about-body {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: clamp(20px, 3vw, 28px);
+        }
         .about-meta {
-          display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px;
-          margin-top: clamp(28px, 4vw, 36px); padding-top: 24px; border-top: 1px solid var(--border);
-          font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--muted2);
+          display: flex; align-items: center; flex-wrap: wrap; gap: 12px 18px;
+          margin-top: clamp(36px, 5vw, 48px);
+          padding-top: 28px;
+          border-top: 1px solid var(--border);
+          font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+          letter-spacing: 0.06em; color: var(--muted2);
         }
-        .about-meta-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+        .about-meta-dot {
+          width: 5px; height: 5px; border-radius: 50%;
+          background: var(--accent); flex-shrink: 0;
+        }
         .about-meta-divider { width: 1px; height: 10px; background: var(--border2); }
-        @media (max-width: 768px) { .about-body { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+          .about-body { grid-template-columns: 1fr; }
+          .about-lead { font-size: clamp(19px, 5vw, 22px); }
+        }
       `}</style>
 
       <SectionLayout index="01">
-        <SectionHeader eyebrow="About" description="Full-stack developer — building what teams depend on after launch." />
+        <SectionHeader eyebrow="About" description="Developer and operations partner — building systems teams rely on every day." />
         <div className="about-intro">
           <p className="about-lead">
-            I ship systems and operational automations that absorb complexity — so product teams spend less time firefighting and more time moving forward.
+          I build software, AI automations, and intelligent business systems that simplify operations and help teams focus on higher-value work. 
           </p>
           <div className="about-scope">
             {scopeItems.map((item, i) => (
@@ -57,12 +80,12 @@ export default function About() {
               <span className="about-panel-number">01</span>
             </div>
             <div className="about-panel-grid">
-              <div className="about-panel-metric"><span>Operations</span></div>
+              <div className="about-panel-metric"><span>Backend Systems</span></div>
               <div className="about-panel-metric"><span>Automations</span></div>
               <div className="about-panel-metric"><span>Internal Tools</span></div>
-              <div className="about-panel-metric"><span>Workflows</span></div>
+              <div className="about-panel-metric"><span>Virtual Ops</span></div>
             </div>
-            <p>Business systems that reduce manual work, improve visibility, and help teams operate more efficiently as they grow.</p>
+            <p>Software and operational systems that reduce manual work, improve visibility, and help teams operate more efficiently as they grow.</p>
           </div>
           <div className="about-panel">
             <div className="about-panel-top">
@@ -84,7 +107,7 @@ export default function About() {
           <span className="about-meta-divider" aria-hidden="true" />
           <span>Available remotely</span>
           <span className="about-meta-divider" aria-hidden="true" />
-          <span>Open to SWE &amp; automation roles</span>
+          <span>Open to SWE, automation &amp; ops support roles</span>
         </div>
       </SectionLayout>
     </section>
