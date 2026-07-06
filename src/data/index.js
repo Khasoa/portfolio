@@ -1,9 +1,9 @@
 import leadWorkflowImg from "../assets/n8n-lead-management-workflow.jpg"
 import operationalWorkflowImg from "../assets/n8n-operational-workflow.jpg"
 import supplierWorkflowImg from "../assets/n8n-supplier-compliance-workflow.jpg"
-import leadDemo from "../assets/lead-management-automation.mp4"
-import operationalDemo from "../assets/operational-workflow-automation.mp4"
-import supplierDemo from "../assets/supplier-compliance-automation.mp4"
+import leadDemo from "../assets/lead-management-workflow-automation.mp4"
+import operationalDemo from "../assets/operational-requests-workflow-automation.mp4"
+import supplierDemo from "../assets/supplier-compliance-system-automation-workflow.mp4"
 
 export const projects = [
   {
@@ -22,7 +22,7 @@ export const projects = [
     name: "TerraFold Trace",
     tagline: "Supply chain traceability and sustainability intelligence platform",
     problem: "Produce moves through multiple hands — farmer, aggregator, warehouse, buyer — with no traceability, making quality disputes and fraud nearly impossible to resolve.",
-    solution: "A role-based traceability system that tracks every batch from farm to buyer with timestamped records, status updates, and purchase order management. Full audit trail from field to invoice.",
+    solution: "A role-based traceability system that tracks every batch from farm to buyer with timestamped records, status updates, and purchase order management. Full audit trail from field to invoice. (Associated with Moringa School's capstone project)",
     stack: ["React", "Flask", "SQLAlchemy", "PostgreSQL", "JWT"],
     image: "/terrafold.jpg",
     github: "",
