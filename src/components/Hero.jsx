@@ -234,16 +234,19 @@ export default function Hero() {
             align-items: center;
             padding: 8px var(--section-x) clamp(40px, 8vw, 56px);
             min-height: auto;
+            overflow-x: clip;
           }
+          .hero-center { overflow-x: clip; max-width: 100%; }
           .hero-rail--desktop { display: none !important; }
           .hero-deco { display: none; }
           .hero-visual {
             height: clamp(340px, 70vw, 440px);
             width: min(100%, 340px);
             margin: clamp(-40px, -6vw, -24px) auto clamp(20px, 5vw, 28px);
+            overflow: hidden;
           }
           .hero-portrait {
-            width: 114%;
+            width: 100%;
             bottom: -5%;
           }
           .hero-arch { width: 72%; height: 52%; bottom: 4%; }
