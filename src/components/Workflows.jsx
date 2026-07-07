@@ -355,7 +355,7 @@ export default function Workflows() {
           pointer-events: none;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
           .wf-grid { grid-template-columns: 1fr; }
           .workflow-arrow { display: none; }
           .wf-card {
@@ -364,10 +364,9 @@ export default function Workflows() {
           }
           .wf-card:last-child { border-bottom: none; }
           .wf-card-tier { align-self: flex-start; margin-bottom: 12px; }
-        }
-        @media (max-width: 768px) {
-          .wf-card-inner { padding: 28px 24px 0; }
-          .wf-solution-inner { padding: 0 24px 28px; }
+          .wf-card-inner { padding: clamp(22px, 5vw, 28px) clamp(18px, 4.5vw, 24px) 0; }
+          .wf-solution-inner { padding: 0 clamp(18px, 4.5vw, 24px) clamp(22px, 5vw, 28px); }
+          .wf-shell-header { padding: 14px clamp(18px, 4.5vw, 24px); }
         }
       `}</style>
 

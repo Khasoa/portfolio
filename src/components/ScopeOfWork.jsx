@@ -14,7 +14,7 @@ const pillars = [
     title: "Software Development",
     description: "Reliable software that scales with your business instead of slowing it down.",
     bullets: ["Clean Architecture", "Robust APIs", "Performance & Reliability"],
-    cta: "Ship with quality, and scale with confidence.",
+    cta: "Ship with confidence.",
     image: scopeSoftware,
     imageAlt: "Isometric software development illustration",
   },
@@ -225,11 +225,17 @@ export default function ScopeOfWork() {
           height: 10px;
           background: var(--border2);
         }
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
+          .how-section {
+            padding: clamp(32px, 8vw, 44px) var(--section-x) clamp(36px, 9vw, 48px);
+          }
+          .how-section .section-header {
+            margin-bottom: clamp(20px, 5vw, 28px);
+          }
           .how-grid {
             grid-template-columns: 1fr;
-            gap: 24px;
-            max-width: 380px;
+            gap: 20px;
+            max-width: 100%;
           }
           .how-card { padding: 0; }
           .how-card:not(:first-child)::before {
@@ -241,8 +247,14 @@ export default function ScopeOfWork() {
             height: 1px;
             background: var(--border);
           }
-          .how-art { height: 96px; }
+          .how-art { height: 96px; margin-bottom: 12px; }
           .how-title, .how-desc { min-height: 0; }
+          .how-meta {
+            margin-top: clamp(24px, 6vw, 32px);
+            padding-top: clamp(20px, 5vw, 24px);
+            gap: 10px 14px;
+            max-width: 100%;
+          }
         }
         @media (prefers-reduced-motion: reduce) {
           .how-cta, .how-cta svg { transition: none; }

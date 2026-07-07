@@ -329,15 +329,28 @@ export default function Skills() {
         }
 
         @media (max-width: 768px) {
-          .constellation-wrap { padding: 14px 10px; }
-          .constellation { height: clamp(600px, 108vw, 680px); }
+          .constellation-wrap {
+            margin-top: clamp(20px, 5vw, 28px);
+            padding: 0;
+          }
+          .constellation {
+            height: clamp(520px, 128vw, 600px);
+            overflow: clip;
+            border-radius: var(--radius-md);
+          }
           .center-node {
-            width: 155px;
-            height: 155px;
-            padding: 22px 18px;
+            width: 148px;
+            height: 148px;
+            padding: 20px 16px;
           }
           .center-title { font-size: var(--type-card-title); }
           .center-words span { font-size: 10px; }
+          .skill-placed .skill-chip {
+            transform: scale(0.9);
+          }
+          .skill-chip:hover {
+            transform: scale(0.9);
+          }
         }
         @media (prefers-reduced-motion: reduce) {
           .center-node, .skill-placed, .arc-guides__arc {

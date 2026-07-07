@@ -179,8 +179,8 @@ export default function Projects() {
             border-bottom: 1px solid var(--border);
           }
           .proj-card:last-child { border-bottom: none; }
-          .proj-card-inner { padding: 28px 24px 0; }
-          .proj-solution-inner { padding: 0 24px 28px; }
+          .proj-card-inner { padding: clamp(22px, 5vw, 28px) clamp(18px, 4.5vw, 24px) 0; }
+          .proj-solution-inner { padding: 0 clamp(18px, 4.5vw, 24px) clamp(22px, 5vw, 28px); }
         }
       `}</style>
 

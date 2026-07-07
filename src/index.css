@@ -500,6 +500,11 @@ select option {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --section-y: clamp(48px, 11vw, 72px);
+    --type-card-title: clamp(18px, 5vw, 22px);
+  }
+
   .proj-image-frame {
     aspect-ratio: 16 / 11;
   }
@@ -513,6 +518,7 @@ select option {
     align-items: center;
     gap: 14px;
     padding-top: 0;
+    margin-bottom: 4px;
   }
   .section-index-line {
     width: auto;
@@ -523,18 +529,34 @@ select option {
   }
   .section-num { font-size: 32px; }
 
+  .section-header {
+    margin-bottom: clamp(24px, 6vw, 32px);
+  }
+  .section-header__title {
+    margin-bottom: 10px;
+  }
+  .section-header__desc {
+    max-width: 100%;
+  }
+
   .nav-desktop { display: none !important; }
   .nav-mobile-toggle { display: flex !important; min-width: 44px; min-height: 44px; }
   .proj-grid { grid-template-columns: 1fr !important; }
   .wf-grid { grid-template-columns: 1fr !important; }
-  .contact-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .contact-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
   .site-footer { flex-direction: column; align-items: flex-start; gap: 20px; }
+
+  .proj-shell,
+  .wf-shell {
+    border-radius: var(--radius-md);
+  }
 }
 
 @media (max-width: 390px) {
   :root {
     --section-x: 16px;
-    --section-y: 48px;
+    --section-y: 44px;
+    --text-hero: clamp(34px, 10vw, 42px);
   }
 }
 

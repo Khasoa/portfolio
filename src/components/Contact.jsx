@@ -151,7 +151,10 @@ export default function Contact() {
           box-shadow: var(--shadow-card);
         }
         @media (max-width: 768px) {
-          .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+          .contact-intro p { max-width: 100%; margin-bottom: 20px; }
+          .contact-form-card {
+            padding: clamp(22px, 5vw, 28px) clamp(18px, 4.5vw, 24px);
+          }
         }
       `}</style>
 

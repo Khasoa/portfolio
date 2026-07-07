@@ -235,7 +235,18 @@ export default function Hero() {
             min-height: auto;
             overflow-x: clip;
           }
-          .hero-center { overflow-x: clip; max-width: 100%; }
+          .hero-center {
+            overflow-x: clip;
+            max-width: 100%;
+            width: 100%;
+            padding: 0 2px;
+          }
+          .hero-title { font-size: clamp(36px, 11vw, 52px); }
+          .hero-copy {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 2px;
+          }
           .hero-rail--desktop { display: none !important; }
           .hero-deco { display: none; }
           .hero-visual {
@@ -253,9 +264,9 @@ export default function Hero() {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 32px;
+            gap: 24px;
             width: 100%;
-            margin-top: clamp(32px, 6vw, 44px);
+            margin-top: clamp(28px, 6vw, 36px);
           }
           .hero-mobile-rail {
             width: 100%;
