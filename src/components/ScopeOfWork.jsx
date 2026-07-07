@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react"
 import scopeSoftware from "../assets/scope-software-development.png"
 import scopeAutomation from "../assets/scope-workflow-automation.png"
 import scopeOperations from "../assets/scope-virtual-operations.png"
+import SectionHeader from "./SectionHeader"
 
 const ACCENT = "#0F766E"
 const WARM = "#D9725A"
@@ -49,26 +50,8 @@ export default function ScopeOfWork() {
           max-width: var(--section-max);
           margin: 0 auto;
         }
-        .how-header {
-          text-align: center;
-          max-width: 520px;
-          margin: 0 auto clamp(24px, 3.5vw, 32px);
-        }
-        .how-eyebrow {
-          font-family: var(--font-mono);
-          font-size: 10px;
-          font-weight: 500;
-          letter-spacing: 0.06em;
-          color: var(--accent);
-          margin-bottom: 12px;
-        }
-        .how-intro {
-          font-family: var(--font-display);
-          font-size: clamp(18px, 2vw, 22px);
-          font-weight: 600;
-          line-height: 1.5;
-          letter-spacing: -0.02em;
-          color: var(--text);
+        .how-section .section-header {
+          margin-bottom: clamp(24px, 3.5vw, 32px);
         }
         .how-grid {
           display: grid;
@@ -105,8 +88,9 @@ export default function ScopeOfWork() {
         }
         .how-index {
           font-family: var(--font-mono);
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 600;
+          letter-spacing: 0.07em;
           line-height: 1;
         }
         .how-index-rule {
@@ -139,20 +123,21 @@ export default function ScopeOfWork() {
         }
         .how-title {
           font-family: var(--font-display);
-          font-size: clamp(15px, 1.45vw, 17px);
+          font-size: var(--type-card-title);
           font-weight: 700;
           letter-spacing: -0.02em;
           color: var(--text);
-          margin: 0 0 6px;
-          line-height: 1.25;
-          min-height: 2.5em;
+          margin: 0 0 8px;
+          line-height: 1.2;
+          min-height: 2.4em;
         }
         .how-desc {
-          font-size: 12.5px;
-          line-height: 1.55;
+          font-family: var(--font-sans);
+          font-size: var(--text-sm);
+          line-height: var(--leading-normal);
           color: var(--muted);
           margin: 0 0 12px;
-          min-height: 2.95em;
+          min-height: 3em;
         }
         .how-divider {
           height: 1px;
@@ -166,23 +151,24 @@ export default function ScopeOfWork() {
           margin: 0 0 12px;
           display: flex;
           flex-direction: column;
-          gap: 7px;
+          gap: 8px;
           flex: 1;
         }
         .how-bullets li {
           display: flex;
           align-items: flex-start;
-          gap: 7px;
-          font-size: 12px;
+          gap: 8px;
+          font-family: var(--font-sans);
+          font-size: var(--text-sm);
           color: var(--text);
-          line-height: 1.35;
+          line-height: var(--leading-normal);
         }
         .how-dot {
           width: 5px;
           height: 5px;
           border-radius: 50%;
           flex-shrink: 0;
-          margin-top: 5px;
+          margin-top: 7px;
         }
         .how-cta {
           margin-top: auto;
@@ -191,10 +177,11 @@ export default function ScopeOfWork() {
           gap: 6px;
           border: 1px solid var(--border);
           border-radius: var(--radius-md);
-          padding: 8px 12px;
-          font-size: 11.5px;
+          padding: 10px 12px;
+          font-family: var(--font-sans);
+          font-size: var(--text-sm);
           font-weight: 500;
-          line-height: 1.35;
+          line-height: var(--leading-normal);
           background: var(--bg-subtle);
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
@@ -263,13 +250,14 @@ export default function ScopeOfWork() {
         }
       `}</style>
 
-      <section id="services" className="how-section" aria-labelledby="scope-heading">
-        <div className="how-header">
-          <p className="how-eyebrow" id="scope-heading">&lt;SCOPE_OF_WORK /&gt;</p>
-          <p className="how-intro">
-            Software, automation, and operations support — one partner across all three.
-          </p>
-        </div>
+      <section id="services" className="how-section" aria-labelledby="scope-title">
+        <SectionHeader
+          eyebrow="Scope of work"
+          title="What I deliver"
+          titleId="scope-title"
+          description="Software, automation, and operations support — one partner across all three."
+          centered
+        />
 
         <div className="how-grid">
           {pillars.map(({ number, accent, title, description, bullets, cta, image, imageAlt }) => (

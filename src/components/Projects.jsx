@@ -89,7 +89,7 @@ export default function Projects() {
         .proj-num { margin-bottom: 12px; }
         .proj-title {
           font-family: var(--font-display);
-          font-size: clamp(22px, 2.5vw, 26px);
+          font-size: var(--type-card-title);
           font-weight: 700;
           color: var(--text);
           letter-spacing: -0.02em;
@@ -132,7 +132,7 @@ export default function Projects() {
         }
         .proj-stack-label {
           font-family: var(--font-mono);
-          font-size: 9px;
+          font-size: 10px;
           font-weight: 600;
           letter-spacing: 0.08em;
           text-transform: uppercase;
@@ -140,8 +140,9 @@ export default function Projects() {
           margin-bottom: 6px;
         }
         .proj-stack-list {
-          font-size: 11px;
-          line-height: 1.55;
+          font-family: var(--font-sans);
+          font-size: var(--text-sm);
+          line-height: var(--leading-normal);
           color: var(--muted);
           margin: 0;
         }
@@ -157,7 +158,7 @@ export default function Projects() {
         .proj-expand-arrow {
           color: var(--accent);
           transition: transform 0.25s ease;
-          font-size: 11px;
+          font-size: 10px;
         }
         .proj-solution-panel {
           overflow: hidden;

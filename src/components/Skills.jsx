@@ -69,8 +69,18 @@ const customSVGs = {
   ),
   ClickUp: (
     <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
-      <path fill="#7B68EE" d="M12.04 6.15 5.472 11.81 2.436 8.29 12.055 0l9.543 8.296-3.05 3.509z" />
-      <path fill="#49CCF9" d="M2 18.439l3.69-2.828c1.961 2.56 4.044 3.739 6.363 3.739 2.307 0 4.33-1.166 6.203-3.704L22 18.405C19.298 22.065 15.941 24 12.053 24 8.178 24 4.788 22.078 2 18.439z" />
+      <defs>
+        <linearGradient id="clickup-upper" x1="2" y1="6" x2="22" y2="6" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FD71AF" />
+          <stop offset="100%" stopColor="#FFAB00" />
+        </linearGradient>
+        <linearGradient id="clickup-lower" x1="2" y1="21" x2="22" y2="21" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#7B68EE" />
+          <stop offset="100%" stopColor="#49CCF9" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#clickup-upper)" d="M12.04 6.15 5.472 11.81 2.436 8.29 12.055 0l9.543 8.296-3.05 3.509z" />
+      <path fill="url(#clickup-lower)" d="M2 18.439l3.69-2.828c1.961 2.56 4.044 3.739 6.363 3.739 2.307 0 4.33-1.166 6.203-3.704L22 18.405C19.298 22.065 15.941 24 12.053 24 8.178 24 4.788 22.078 2 18.439z" />
     </svg>
   ),
   JavaScript: (
@@ -247,10 +257,10 @@ export default function Skills() {
         }
         .center-title {
           font-family: var(--font-display);
-          font-size: clamp(20px, 2.4vw, 26px);
+          font-size: var(--type-card-title);
           font-weight: 700;
-          line-height: 1.12;
-          letter-spacing: -0.03em;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
           color: var(--text);
         }
         .center-words {
@@ -262,9 +272,9 @@ export default function Skills() {
         }
         .center-words span {
           font-family: var(--font-mono);
-          font-size: 9px;
+          font-size: 10px;
           font-weight: 500;
-          letter-spacing: 0.14em;
+          letter-spacing: 0.12em;
           text-transform: uppercase;
           color: var(--muted2);
           line-height: 1;
@@ -326,8 +336,8 @@ export default function Skills() {
             height: 155px;
             padding: 22px 18px;
           }
-          .center-title { font-size: 18px; }
-          .center-words span { font-size: 8px; }
+          .center-title { font-size: var(--type-card-title); }
+          .center-words span { font-size: 10px; }
         }
         @media (prefers-reduced-motion: reduce) {
           .center-node, .skill-placed, .arc-guides__arc {

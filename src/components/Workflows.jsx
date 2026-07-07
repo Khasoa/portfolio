@@ -176,7 +176,7 @@ export default function Workflows() {
           align-items: baseline;
           gap: 4px;
           font-family: var(--font-mono);
-          font-size: 9px;
+          font-size: 10px;
           font-weight: 500;
           letter-spacing: 0.08em;
           text-transform: uppercase;
@@ -188,7 +188,7 @@ export default function Workflows() {
           white-space: nowrap;
         }
         .wf-tier-sub {
-          font-size: 8px;
+          font-size: 10px;
           letter-spacing: 0.04em;
           text-transform: lowercase;
           color: var(--muted2);
@@ -196,10 +196,10 @@ export default function Workflows() {
         }
         .wf-card-title {
           font-family: var(--font-display);
-          font-size: clamp(19px, 2vw, 23px);
+          font-size: var(--type-card-title);
           font-weight: 700;
           color: var(--text);
-          line-height: 1.25;
+          line-height: 1.2;
           letter-spacing: -0.02em;
           margin: 0 0 8px;
           width: 100%;
@@ -245,7 +245,7 @@ export default function Workflows() {
           align-items: center;
           gap: 5px;
           font-family: var(--font-mono);
-          font-size: 9px;
+          font-size: 10px;
           font-weight: 600;
           letter-spacing: 0.06em;
           text-transform: uppercase;
@@ -299,7 +299,7 @@ export default function Workflows() {
         }
         .wf-stack-label {
           font-family: var(--font-mono);
-          font-size: 9px;
+          font-size: 10px;
           font-weight: 600;
           letter-spacing: 0.08em;
           text-transform: uppercase;
@@ -307,8 +307,9 @@ export default function Workflows() {
           margin-bottom: 6px;
         }
         .wf-stack-list {
-          font-size: 11px;
-          line-height: 1.55;
+          font-family: var(--font-sans);
+          font-size: var(--text-sm);
+          line-height: var(--leading-normal);
           color: var(--muted);
           margin: 0;
         }
@@ -335,7 +336,7 @@ export default function Workflows() {
           color: var(--accent);
           display: inline-block;
           transition: transform 0.25s ease;
-          font-size: 11px;
+          font-size: 10px;
         }
         .wf-solution-panel {
           overflow: hidden;

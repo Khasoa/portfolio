@@ -76,13 +76,15 @@ export default function Contact() {
         }
         .contact-intro h3 {
           font-family: var(--font-display);
-          font-size: clamp(22px, 2.5vw, 26px);
+          font-size: var(--type-card-title);
           font-weight: 700;
           color: var(--text);
           margin-bottom: 14px;
-          line-height: 1.25;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
         }
         .contact-intro p {
+          font-family: var(--font-sans);
           font-size: var(--text-sm);
           color: var(--muted);
           line-height: var(--leading-normal);
@@ -94,7 +96,8 @@ export default function Contact() {
           margin-bottom: 12px;
         }
         .contact-chip {
-          font-size: 12px;
+          font-family: var(--font-sans);
+          font-size: var(--text-sm);
           font-weight: 500;
           color: var(--muted);
           border: 1px solid transparent;
@@ -115,12 +118,14 @@ export default function Contact() {
         }
         .contact-trust-link__icon { color: var(--muted2); flex-shrink: 0; }
         .contact-trust-link__label {
-          font-size: 14px;
+          font-family: var(--font-sans);
+          font-size: var(--text-sm);
           font-weight: 500;
           color: var(--text);
         }
         .contact-trust-link__sub {
-          font-size: 12px;
+          font-family: var(--font-sans);
+          font-size: var(--text-sm);
           color: var(--muted2);
           margin-top: 3px;
         }
