@@ -3,7 +3,6 @@ import heroPortrait from "../assets/hero-portrait.png"
 const LINKS = {
   linkedin: "https://www.linkedin.com/in/lydiakhasoa/",
   github:   "https://github.com/Khasoa",
-  email:    "khasoalydia@gmail.com",
 }
 
 function Rail({ labels, side, linkMap, className = "" }) {
@@ -25,8 +24,8 @@ function Rail({ labels, side, linkMap, className = "" }) {
           if (href) {
             return (
               <a key={label} href={href}
-                target={href.startsWith("mailto") ? undefined : "_blank"}
-                rel={href.startsWith("mailto") ? undefined : "noreferrer"}
+                target="_blank"
+                rel="noreferrer"
                 className="hero-rail__label hero-rail__label--link"
                 style={style}
               >{text}</a>
@@ -53,8 +52,8 @@ function MobileRailGroup({ labels, linkMap }) {
           if (href) {
             return (
               <a key={label} href={href}
-                target={href.startsWith("mailto") ? undefined : "_blank"}
-                rel={href.startsWith("mailto") ? undefined : "noreferrer"}
+                target="_blank"
+                rel="noreferrer"
                 className="hero-rail__label hero-rail__label--link"
               >{text}</a>
             )
@@ -296,7 +295,7 @@ export default function Hero() {
         <div className="hero-deco hero-deco--arc" aria-hidden="true" />
         <div className="hero-deco hero-deco--arc2" aria-hidden="true" />
 
-        <Rail className="hero-rail--desktop" side="left" labels={["linkedin", "github", "email"]} linkMap={LINKS} />
+        <Rail className="hero-rail--desktop" side="left" labels={["linkedin", "github"]} linkMap={LINKS} />
         <div className="hero-center">
           <div className="hero-visual">
             <div className="hero-arch" aria-hidden="true" />
@@ -324,18 +323,18 @@ export default function Hero() {
             </p>
           </div>
           <p className="hero-copy">
-          Building intelligent systems that reduce manual work, streamline operations, and help teams scale efficiently.
+          Building intelligent systems that reduce manual work, streamline operations, and help teams focus on higher-value work.
           </p>
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">View Projects</a>
-            <a href="https://calendly.com/khasoalydia/30min" target="_blank" rel="noreferrer" className="btn btn-secondary">Book a Call</a>
+            <a href="#services" className="btn btn-primary">What I Do</a>
+            <a href="#projects" className="btn btn-secondary">View Projects</a>
           </div>
           <div className="hero-rails-mobile" aria-label="Links and roles">
-            <MobileRailGroup labels={["linkedin", "github", "email"]} linkMap={LINKS} />
-            <MobileRailGroup labels={["software_development", "workflow_automation", "virtual_ops_support"]} />
+            <MobileRailGroup labels={["linkedin", "github"]} linkMap={LINKS} />
+            <MobileRailGroup labels={["software_development", "automation", "executive_support"]} />
           </div>
         </div>
-        <Rail className="hero-rail--desktop" side="right" labels={["software_development", "workflow_automation", "virtual_ops_support"]} />
+        <Rail className="hero-rail--desktop" side="right" labels={["software_development", "automation", "executive_support"]} />
       </section>
     </>
   )

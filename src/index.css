@@ -141,7 +141,6 @@ select option {
   margin: 0 auto;
 }
 
-.s-wrap--about { padding-bottom: calc(var(--section-y) + 8px); }
 .s-wrap--workflow { padding-top: calc(var(--section-y) + 4px); }
 .s-wrap--skills { padding-top: calc(var(--section-y) + 12px); padding-bottom: calc(var(--section-y) + 16px); }
 .s-wrap--contact { padding-top: calc(var(--section-y) + 8px); padding-bottom: calc(var(--section-y) + 16px); }
@@ -151,6 +150,10 @@ select option {
   background: var(--bg-band);
 }
 
+.section-band--intro {
+  background: var(--surface-raised);
+}
+
 .section-band::before {
   content: "";
   position: absolute;
@@ -158,6 +161,11 @@ select option {
   pointer-events: none;
   background:
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 255, 255, 0.55), transparent 60%);
+}
+
+.section-band--intro::before {
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(15, 118, 110, 0.04), transparent 58%);
 }
 
 .section-band > * {
@@ -390,62 +398,6 @@ select option {
   background: var(--accent-dim);
   border-color: var(--accent-mid);
   color: var(--accent);
-}
-
-.about-panel {
-  position: relative;
-  padding: clamp(26px, 3.5vw, 32px);
-  border: none;
-  border-radius: var(--radius-xl);
-  background: var(--surface-raised);
-  box-shadow: var(--shadow-card);
-  overflow: hidden;
-}
-.about-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(20, 184, 166, 0.04), transparent 52%);
-  pointer-events: none;
-}
-.about-panel-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  position: relative;
-}
-.about-panel-number {
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-}
-.about-panel-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  margin-bottom: 20px;
-  position: relative;
-}
-.about-panel-metric {
-  padding: 13px 15px;
-  border-radius: var(--radius-md);
-  background: var(--bg-subtle);
-  border: none;
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--text);
-}
-.about-panel p {
-  font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  font-weight: 400;
-  line-height: var(--leading-normal);
-  color: var(--muted);
-  margin: 0;
-  position: relative;
 }
 
 .proj-image-frame {

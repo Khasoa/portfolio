@@ -1,20 +1,41 @@
-import { Code2, RefreshCw, Headset } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
+import scopeSoftware from "../assets/scope-software-development.png"
+import scopeAutomation from "../assets/scope-workflow-automation.png"
+import scopeOperations from "../assets/scope-virtual-operations.png"
+
+const ACCENT = "#0F766E"
+const WARM = "#D9725A"
 
 const pillars = [
   {
-    icon: Code2,
+    number: "01",
+    accent: ACCENT,
     title: "Software Development",
-    description: "Building full-stack applications that combine thoughtful user experiences, scalable backend services, and reliable data architecture.",
+    description: "Reliable software that scales with your business instead of slowing it down.",
+    bullets: ["Clean Architecture", "Robust APIs", "Performance & Reliability"],
+    cta: "Ship with quality, and scale with confidence.",
+    image: scopeSoftware,
+    imageAlt: "Isometric software development illustration",
   },
   {
-    icon: RefreshCw,
+    number: "02",
+    accent: WARM,
     title: "Workflow Automation",
-    description: "Replacing manual, repeatable processes with systems that run themselves — from lead intake to compliance pipelines.",
+    description: "Hours of repetitive work replaced with automated systems that run reliably.",
+    bullets: ["End-to-End Automations", "System Integrations", "Process Optimization"],
+    cta: "Fewer handoffs. Faster outcomes.",
+    image: scopeAutomation,
+    imageAlt: "Isometric workflow automation illustration",
   },
   {
-    icon: Headset,
-    title: "Virtual Operations Support",
-    description: "Remote tech and executive support that keeps teams running — documentation, coordination, and operational continuity.",
+    number: "03",
+    accent: ACCENT,
+    title: "Virtual Executive & Operations Support",
+    description: "Clear documentation, organized operations, and fewer things falling through the cracks.",
+    bullets: ["Documentation & SOPs", "Team Coordination", "Operational Continuity"],
+    cta: "Stay organized and in control.",
+    image: scopeOperations,
+    imageAlt: "Virtual operations support illustration",
   },
 ]
 
@@ -22,107 +43,275 @@ export default function ScopeOfWork() {
   return (
     <>
       <style>{`
-        .scope-section {
-          padding: clamp(32px, 5vw, 48px) var(--section-x) clamp(48px, 7vw, 64px);
+        .how-section {
+          position: relative;
+          padding: clamp(36px, 5vw, 52px) var(--section-x) clamp(44px, 6vw, 64px);
           max-width: var(--section-max);
           margin: 0 auto;
         }
-        .scope-label {
+        .how-header {
           text-align: center;
+          max-width: 520px;
+          margin: 0 auto clamp(24px, 3.5vw, 32px);
+        }
+        .how-eyebrow {
           font-family: var(--font-mono);
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 500;
           letter-spacing: 0.06em;
           color: var(--accent);
-          margin-bottom: clamp(24px, 3.5vw, 32px);
+          margin-bottom: 12px;
         }
-        .scope-panel {
-          position: relative;
+        .how-intro {
+          font-family: var(--font-display);
+          font-size: clamp(18px, 2vw, 22px);
+          font-weight: 600;
+          line-height: 1.5;
+          letter-spacing: -0.02em;
+          color: var(--text);
+        }
+        .how-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          border-radius: var(--radius-lg);
-          border: 1px solid var(--border);
-          background: var(--surface-raised);
-          box-shadow: var(--shadow-card);
-          overflow: hidden;
+          gap: clamp(12px, 1.6vw, 20px);
+          align-items: stretch;
+          max-width: min(100%, 880px);
+          margin: 0 auto;
         }
-        .scope-panel::before {
-          content: "";
-          position: absolute;
-          inset: 0 0 auto;
-          height: 2px;
-          background: linear-gradient(90deg, transparent 0%, var(--accent-lit) 20%, var(--accent) 50%, var(--accent-lit) 80%, transparent 100%);
-          opacity: 0.45;
-        }
-        .scope-card {
+        .how-card {
           position: relative;
-          padding: clamp(28px, 3.5vw, 36px) clamp(24px, 3vw, 32px);
+          display: flex;
+          flex-direction: column;
+          min-height: 100%;
+          padding: 0 clamp(10px, 1.4vw, 16px);
         }
-        .scope-card:not(:last-child)::after {
+        .how-card:first-child { padding-left: 0; }
+        .how-card:last-child { padding-right: 0; }
+        .how-card:not(:first-child)::before {
           content: "";
           position: absolute;
-          top: 16%;
-          bottom: 16%;
-          right: 0;
+          top: 4%;
+          bottom: 4%;
+          left: 0;
           width: 1px;
-          background: linear-gradient(180deg, transparent, var(--border) 18%, var(--border) 82%, transparent);
+          background: linear-gradient(180deg, transparent, var(--border) 15%, var(--border) 85%, transparent);
         }
-        .scope-icon {
-          width: 40px;
-          height: 40px;
+        .how-index-row {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 4px;
+          min-height: 18px;
+        }
+        .how-index {
+          font-family: var(--font-mono);
+          font-size: 11px;
+          font-weight: 600;
+          line-height: 1;
+        }
+        .how-index-rule {
+          width: 24px;
+          height: 1px;
+          background: var(--border);
+          flex-shrink: 0;
+        }
+        .how-art {
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: 10px;
-          background: var(--accent-dim);
-          color: var(--accent);
-          margin-bottom: 18px;
+          height: clamp(88px, 9vw, 104px);
+          margin: 0 0 8px;
+          flex-shrink: 0;
         }
-        .scope-title {
+        .how-art img {
+          display: block;
+          width: auto;
+          height: 100%;
+          max-width: 92%;
+          object-fit: contain;
+          object-position: center;
+        }
+        .how-copy {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+        .how-title {
           font-family: var(--font-display);
-          font-size: clamp(16px, 1.7vw, 19px);
+          font-size: clamp(15px, 1.45vw, 17px);
           font-weight: 700;
-          color: var(--text);
           letter-spacing: -0.02em;
-          line-height: 1.35;
-          margin-bottom: 10px;
+          color: var(--text);
+          margin: 0 0 6px;
+          line-height: 1.25;
+          min-height: 2.5em;
         }
-        .scope-desc {
-          font-size: var(--text-sm);
-          font-weight: 400;
-          line-height: var(--leading-normal);
+        .how-desc {
+          font-size: 12.5px;
+          line-height: 1.55;
           color: var(--muted);
-          margin: 0;
-          max-width: 36ch;
+          margin: 0 0 12px;
+          min-height: 2.95em;
         }
-        @media (max-width: 768px) {
-          .scope-section { padding: 32px var(--section-x) 48px; }
-          .scope-panel { grid-template-columns: 1fr; }
-          .scope-card:not(:last-child)::after {
-            top: auto;
-            bottom: 0;
-            left: 8%;
-            right: 8%;
+        .how-divider {
+          height: 1px;
+          background: var(--border);
+          margin-bottom: 10px;
+          flex-shrink: 0;
+        }
+        .how-bullets {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 7px;
+          flex: 1;
+        }
+        .how-bullets li {
+          display: flex;
+          align-items: flex-start;
+          gap: 7px;
+          font-size: 12px;
+          color: var(--text);
+          line-height: 1.35;
+        }
+        .how-dot {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          flex-shrink: 0;
+          margin-top: 5px;
+        }
+        .how-cta {
+          margin-top: auto;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-md);
+          padding: 8px 12px;
+          font-size: 11.5px;
+          font-weight: 500;
+          line-height: 1.35;
+          background: var(--bg-subtle);
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .how-cta svg {
+          flex-shrink: 0;
+          transition: transform 0.2s ease;
+        }
+        .how-card:hover .how-cta {
+          box-shadow: var(--shadow-sm);
+        }
+        .how-card:hover .how-cta svg {
+          transform: translate(1px, -1px);
+        }
+        .how-meta {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 12px 18px;
+          margin-top: clamp(32px, 4vw, 44px);
+          padding-top: clamp(24px, 3vw, 32px);
+          border-top: 1px solid var(--border);
+          max-width: min(100%, 880px);
+          margin-left: auto;
+          margin-right: auto;
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 500;
+          letter-spacing: 0.06em;
+          color: var(--muted2);
+        }
+        .how-meta-dot {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: var(--accent);
+          flex-shrink: 0;
+        }
+        .how-meta-divider {
+          width: 1px;
+          height: 10px;
+          background: var(--border2);
+        }
+        @media (max-width: 900px) {
+          .how-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 380px;
+          }
+          .how-card { padding: 0; }
+          .how-card:not(:first-child)::before {
+            top: 0;
+            bottom: auto;
+            left: 0;
+            right: 0;
             width: auto;
             height: 1px;
             background: var(--border);
           }
-          .scope-desc { max-width: none; }
+          .how-art { height: 96px; }
+          .how-title, .how-desc { min-height: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .how-cta, .how-cta svg { transition: none; }
+          .how-card:hover .how-cta svg { transform: none; }
         }
       `}</style>
 
-      <section id="services" className="scope-section" aria-labelledby="scope-heading">
-        <p className="scope-label" id="scope-heading">&lt;SCOPE_OF_WORK /&gt;</p>
-        <div className="scope-panel">
-          {pillars.map(({ icon: Icon, title, description }) => (
-            <article key={title} className="scope-card">
-              <div className="scope-icon" aria-hidden="true">
-                <Icon size={18} strokeWidth={1.75} />
+      <section id="services" className="how-section" aria-labelledby="scope-heading">
+        <div className="how-header">
+          <p className="how-eyebrow" id="scope-heading">&lt;SCOPE_OF_WORK /&gt;</p>
+          <p className="how-intro">
+            Software, automation, and operations support — one partner across all three.
+          </p>
+        </div>
+
+        <div className="how-grid">
+          {pillars.map(({ number, accent, title, description, bullets, cta, image, imageAlt }) => (
+            <article className="how-card" key={title}>
+              <div className="how-index-row">
+                <span className="how-index" style={{ color: accent }}>{number}</span>
+                <span className="how-index-rule" />
               </div>
-              <h3 className="scope-title">{title}</h3>
-              <p className="scope-desc">{description}</p>
+
+              <div className="how-art">
+                <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
+              </div>
+
+              <div className="how-copy">
+                <h3 className="how-title">{title}</h3>
+                <p className="how-desc">{description}</p>
+                <div className="how-divider" />
+                <ul className="how-bullets">
+                  {bullets.map(b => (
+                    <li key={b}>
+                      <span className="how-dot" style={{ background: accent }} />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="how-cta" style={{ color: accent, borderColor: `${accent}33` }}>
+                <ArrowUpRight size={13} strokeWidth={2} aria-hidden="true" />
+                {cta}
+              </div>
             </article>
           ))}
+        </div>
+
+        <div className="how-meta">
+          <span className="how-meta-dot" aria-hidden="true" />
+          <span>Kenya</span>
+          <span className="how-meta-divider" aria-hidden="true" />
+          <span>Available remotely</span>
+          <span className="how-meta-divider" aria-hidden="true" />
+          <span>Open to SWE, automation &amp; ops support roles</span>
         </div>
       </section>
     </>
