@@ -59,6 +59,7 @@
   --text-lg:         18px;
   --text-xl:         clamp(28px, 3.2vw, 38px);
   --text-hero:       clamp(42px, 5.2vw, 68px);
+  --type-card-title: clamp(20px, 2.2vw, 24px);
 
   --leading-tight:   1.15;
   --leading-normal:  1.6;
@@ -265,6 +266,82 @@ select option {
 }
 
 .section-content { min-width: 0; }
+
+.section-header {
+  margin-bottom: clamp(32px, 5vw, 48px);
+}
+.section-header--center { text-align: center; }
+.section-header__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.section-header--center .section-header__row { justify-content: center; }
+.section-header__row--solo { margin-bottom: 0; }
+.section-header__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.section-header__rule {
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.3;
+  flex-shrink: 0;
+}
+.section-header__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: var(--leading-tight);
+  margin: 0 0 14px;
+}
+.section-header__desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+.section-header--center .section-header__desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.type-card-title {
+  font-family: var(--font-display);
+  font-size: var(--type-card-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.type-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--muted);
+}
+
+.type-field-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
 
 .surface-bubble {
   background: var(--surface);
