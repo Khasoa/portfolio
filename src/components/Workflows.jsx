@@ -370,7 +370,7 @@ export default function Workflows() {
         }
       `}</style>
 
-      <SectionLayout index="03">
+      <SectionLayout index="02">
         <SectionHeader
           eyebrow="Operations & automation"
           title="Workflow Automation"

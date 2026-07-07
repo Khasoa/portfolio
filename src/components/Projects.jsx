@@ -183,7 +183,7 @@ export default function Projects() {
         }
       `}</style>
 
-      <SectionLayout index="02">
+      <SectionLayout index="01">
         <SectionHeader eyebrow="Engineering work" title="Projects" description="Full-stack applications and backend systems built for real problems." />
         <div className="proj-shell">
           <div className="proj-grid">

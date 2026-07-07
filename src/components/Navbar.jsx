@@ -1,7 +1,13 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
-const links = ["About", "Projects", "Automation", "Skills", "Contact"]
+const links = [
+  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
+  { label: "Automation", href: "#automation" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -30,9 +36,9 @@ export default function Navbar() {
       }}>Lydia Khasoa</a>
 
       <ul className="nav-desktop" style={{ display: "flex", gap: "28px", listStyle: "none", alignItems: "center" }}>
-        {links.map(l => (
-          <li key={l}>
-            <a href={`#${l.toLowerCase()}`} className="nav-link">{l}</a>
+        {links.map(({ label, href }) => (
+          <li key={label}>
+            <a href={href} className="nav-link">{label}</a>
           </li>
         ))}
       </ul>
@@ -80,10 +86,10 @@ export default function Navbar() {
           zIndex: 99,
           boxShadow: "var(--shadow-md)",
         }}>
-          {links.map(l => (
+          {links.map(({ label, href }) => (
             <a
-              key={l}
-              href={`#${l.toLowerCase()}`}
+              key={label}
+              href={href}
               onClick={() => setOpen(false)}
               style={{
                 display: "flex",
@@ -97,7 +103,7 @@ export default function Navbar() {
                 borderBottom: "1px solid var(--border)",
                 minHeight: "44px",
               }}
-            >{l}</a>
+            >{label}</a>
           ))}
           <a
             href="https://calendly.com/khasoalydia/30min"

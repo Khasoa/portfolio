@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { CalendarDays, Mail } from "lucide-react"
+import { CalendarDays } from "lucide-react"
 import SectionHeader from "./SectionHeader"
 import SectionLayout from "./SectionLayout"
 
@@ -27,8 +27,8 @@ function TrustLink({ href, icon: Icon, label, sublabel }) {
   return (
     <a
       href={href}
-      target={href.startsWith("mailto") ? undefined : "_blank"}
-      rel={href.startsWith("mailto") ? undefined : "noreferrer"}
+      target="_blank"
+      rel="noreferrer"
       className="contact-trust-link"
     >
       <Icon size={18} className="contact-trust-link__icon" aria-hidden="true" />
@@ -56,7 +56,7 @@ export default function Contact() {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      await fetch("https://api.web3forms.com/submit", {
+      await fetch("https://n8n.khasoalydia.com/webhook-test/lead-intake", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ access_key: "YOUR_WEB3FORMS_KEY", ...form }),
@@ -150,11 +150,11 @@ export default function Contact() {
         }
       `}</style>
 
-      <SectionLayout index="05">
+      <SectionLayout index="04">
         <SectionHeader
           eyebrow="Get in touch"
           title="Contact"
-          description="Open to software engineering roles, workflow automation contracts, and tech or executive virtual support engagements. Based in Kenya, available remotely."
+          description="Open to software engineering roles, workflow automation contracts, and virtual ops support engagements."
         />
         <div className="contact-grid">
           <div className="contact-intro">
@@ -167,7 +167,6 @@ export default function Contact() {
             </div>
             <div className="contact-trust">
               <TrustLink href="https://calendly.com/khasoalydia/30min" icon={CalendarDays} label="Book a 30-min call" sublabel="Best for discovery & scoping" />
-              <TrustLink href="mailto:khasoalydia@gmail.com" icon={Mail} label="khasoalydia@gmail.com" sublabel="Direct email" />
             </div>
             <div className="contact-response">
               <span className="contact-response-dot" aria-hidden="true" />
