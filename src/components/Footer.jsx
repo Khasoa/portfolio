@@ -22,7 +22,7 @@ export default function Footer() {
         <a href="https://calendly.com/khasoalydia/30min" target="_blank" rel="noreferrer" aria-label="Book a call"><CalendarDays size={17} /></a>
       </div>
       <span style={{ fontFamily: "var(--font-mono)", fontSize: "10px", color: "var(--muted2)", letterSpacing: "0.04em" }}>
-        © 2026 · built with react... and lots of hot chocolate!
+        © 2026 · built with react... and lots of hot coffee!
       </span>
     </footer>
   )

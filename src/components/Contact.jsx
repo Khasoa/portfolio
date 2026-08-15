@@ -10,7 +10,7 @@ const fieldStyle = {
   borderRadius: "var(--radius-md)",
   padding: "14px 16px",
   fontFamily: "var(--font-sans)",
-  fontSize: "15px",
+  fontSize: "var(--text-base)",
   fontWeight: 400,
   color: "var(--text)",
   outline: "none",
@@ -188,7 +188,7 @@ export default function Contact() {
                 borderRadius: "var(--radius-md)",
                 padding: "28px",
               }}>
-                <p style={{ fontSize: "16px", fontWeight: 600, color: "var(--accent)", marginBottom: "8px" }}>Message received.</p>
+                <p style={{ fontSize: "var(--text-base)", fontWeight: 600, color: "var(--accent)", marginBottom: "8px" }}>Message received.</p>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--muted)", lineHeight: "var(--leading-normal)" }}>You'll hear back within 24 hours.</p>
               </div>
             ) : (

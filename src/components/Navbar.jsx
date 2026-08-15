@@ -49,7 +49,7 @@ export default function Navbar() {
           target="_blank"
           rel="noreferrer"
           className="nav-cv-btn btn btn-primary"
-          style={{ display: "none", padding: "9px 18px", minHeight: "36px", fontSize: "11px" }}
+          style={{ display: "none", padding: "9px 18px", minHeight: "36px", fontSize: "12px" }}
         >
           Book a Call
         </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
                 display: "flex",
                 alignItems: "center",
                 padding: "14px 0",
-                fontSize: "13px",
+                fontSize: "10px",
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
                 color: "var(--muted)",
@@ -114,7 +114,7 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               padding: "14px 0",
-              fontSize: "13px",
+              fontSize: "12px",
               fontWeight: 600,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
