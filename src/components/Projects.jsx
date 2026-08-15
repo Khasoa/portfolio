@@ -2,6 +2,7 @@ import { useState } from "react"
 import { projects } from "../data/index"
 import SectionHeader from "./SectionHeader"
 import SectionLayout from "./SectionLayout"
+import FeaturedProject from "./FeaturedProject"
 
 function ExpandToggle({ open, onClick }) {
   return (
@@ -185,7 +186,8 @@ export default function Projects() {
       `}</style>
 
       <SectionLayout index="01">
-        <SectionHeader eyebrow="Engineering work" title="Projects" description="Full-stack applications and backend systems built for real problems." />
+        <SectionHeader eyebrow="Engineering + automation" title="Projects" description="Systems built for real operational problems." />
+        <FeaturedProject />
         <div className="proj-shell">
           <div className="proj-grid">
             {projects.map(p => <ProjectCard key={p.id} project={p} />)}

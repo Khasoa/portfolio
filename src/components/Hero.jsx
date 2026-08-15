@@ -152,7 +152,7 @@ export default function Hero() {
         .hero-rail--right .hero-rail__dot { animation-delay: 2.2s; }
         .hero-rail__labels { display: flex; flex-direction: column; justify-content: center; gap: 28px; }
         .hero-rail__label {
-          font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.03em;
+          font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.03em;
           color: var(--muted2); white-space: nowrap; user-select: none;
         }
         .hero-rail__label--link { text-decoration: none; transition: color 0.2s; }
@@ -292,7 +292,6 @@ export default function Hero() {
             display: flex; flex-wrap: wrap; justify-content: center;
             gap: 12px 18px; width: 100%;
           }
-          .hero-mobile-rail__labels .hero-rail__label { font-size: 10px; }
           .hero-actions { flex-direction: column; width: 100%; max-width: 320px; }
           .hero-actions .btn { width: 100%; }
         }
@@ -327,7 +326,7 @@ export default function Hero() {
           </h1>
           <div className="hero-role" style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
             <p style={{ fontSize: "clamp(13px, 1.4vw, 15px)", fontWeight: 700, letterSpacing: "0.11em", textTransform: "uppercase", color: "var(--text)" }}>
-              Systems &amp; AI Automation
+              Systems &amp; AI Automation | Operations Support
             </p>
             <p style={{ fontSize: "clamp(12px, 1.2vw, 14px)", fontWeight: 500, letterSpacing: "0.09em", textTransform: "uppercase", color: "var(--muted)" }}>
               Software Engineer

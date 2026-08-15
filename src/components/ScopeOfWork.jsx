@@ -11,9 +11,9 @@ const pillars = [
   {
     number: "01",
     accent: ACCENT,
-    title: "Software Development",
+    title: "Software Engineering",
     description: "Reliable software that scales with your business instead of slowing it down.",
-    bullets: ["Clean Architecture", "Robust APIs", "Performance & Reliability"],
+    bullets: ["Full-Stack Applications", "APIs & Backend Systems", "Databases & Integrations"],
     cta: "Ship with confidence.",
     image: scopeSoftware,
     imageAlt: "Isometric software development illustration",
@@ -21,9 +21,9 @@ const pillars = [
   {
     number: "02",
     accent: WARM,
-    title: "Workflow Automation",
+    title: "AI & Workflow Automation",
     description: "Hours of repetitive work replaced with automated systems that run reliably.",
-    bullets: ["End-to-End Automations", "System Integrations", "Process Optimization"],
+    bullets: ["AI-Powered Workflows", "System Integrations", "Process Automation"],
     cta: "Fewer handoffs. Faster outcomes.",
     image: scopeAutomation,
     imageAlt: "Isometric workflow automation illustration",
@@ -31,9 +31,9 @@ const pillars = [
   {
     number: "03",
     accent: ACCENT,
-    title: "Virtual Executive & Operations Support",
+    title: "Administrative & Operations Support",
     description: "Clear documentation, organized operations, and fewer things falling through the cracks.",
-    bullets: ["Documentation & SOPs", "Team Coordination", "Operational Continuity"],
+    bullets: ["Executive & Administrative Support", "Documentation & SOPs", "Task & Workflow Coordination"],
     cta: "Stay organized and in control.",
     image: scopeOperations,
     imageAlt: "Virtual operations support illustration",
@@ -123,7 +123,7 @@ export default function ScopeOfWork() {
         }
         .how-title {
           font-family: var(--font-display);
-          font-size: var(--type-card-title);
+          font-size: var(--text-sm);
           font-weight: 700;
           letter-spacing: -0.02em;
           color: var(--text);

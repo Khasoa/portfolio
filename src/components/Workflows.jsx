@@ -151,14 +151,14 @@ export default function Workflows() {
         .wf-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
+          --wf-gap: clamp(18px, 2.2vw, 28px);
+          gap: var(--wf-gap);
         }
         .wf-card {
           position: relative;
-          border-right: 1px solid var(--border);
         }
-        .wf-card:last-child { border-right: none; }
         .wf-card-inner {
-          padding: clamp(28px, 3.5vw, 36px) clamp(24px, 3vw, 32px) 0;
+          padding: clamp(30px, 3.6vw, 38px) clamp(26px, 3.2vw, 34px) 0;
         }
         .wf-card-header {
           display: flex;
@@ -349,22 +349,21 @@ export default function Workflows() {
           margin-top: 4px;
         }
         .workflow-arrow {
-          position: absolute; right: -12px; top: 42%;
+          position: absolute; right: calc(var(--wf-gap, 24px) / -2 - 6px); top: 42%;
           transform: translateY(-50%);
           color: var(--accent); font-size: 15px; z-index: 5; opacity: 0.5;
           pointer-events: none;
         }
 
         @media (max-width: 768px) {
-          .wf-grid { grid-template-columns: 1fr; }
+          .wf-grid { grid-template-columns: 1fr; --wf-gap: 0px; gap: 0; }
           .workflow-arrow { display: none; }
           .wf-card {
-            border-right: none;
             border-bottom: 1px solid var(--border);
           }
           .wf-card:last-child { border-bottom: none; }
           .wf-card-tier { align-self: flex-start; margin-bottom: 12px; }
-          .wf-card-inner { padding: clamp(22px, 5vw, 28px) clamp(18px, 4.5vw, 24px) 0; }
+          .wf-card-inner { padding: clamp(24px, 5.2vw, 30px) clamp(20px, 4.6vw, 26px) 0; }
           .wf-solution-inner { padding: 0 clamp(18px, 4.5vw, 24px) clamp(22px, 5vw, 28px); }
           .wf-shell-header { padding: 14px clamp(18px, 4.5vw, 24px); }
         }

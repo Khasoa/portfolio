@@ -4,6 +4,35 @@ import supplierWorkflowImg from "../assets/n8n-supplier-compliance-workflow.jpg"
 import leadDemo from "../assets/lead-management-workflow-automation.mp4"
 import operationalDemo from "../assets/operational-requests-workflow-automation.mp4"
 import supplierDemo from "../assets/supplier-compliance-system-automation-workflow.mp4"
+import brieflyDemo from "../assets/Briefly - Executive Briefing Platform demo.mp4"
+
+
+const BRIEFLY_DEMO_URL = brieflyDemo
+
+export const featuredProject = {
+  name: "Briefly",
+  category: "AI Systems · Software Engineering · Workflow Automation",
+  tagline: "AI-powered executive briefing & decision platform",
+  lede: [
+    "Important information is scattered across email, calendars, and task-management systems. Executives shouldn't have to manually reconstruct what matters every morning.",
+    "Briefly connects those systems and turns fragmented operational information into a structured briefing — helping surface priorities, upcoming commitments, relevant communication, tasks, and actions requiring attention.",
+    "Built across both software engineering and workflow automation, Briefly combines application logic, APIs, system integrations, orchestration, and an AI decision layer into one operational system.",
+  ],
+  problem: "Information is fragmented across multiple operational tools — email, calendars, and task managers each hold a piece of the picture, with no shared view of what matters right now.",
+  solution: "Briefly connects those systems and uses an AI decision layer to organise the relevant context into one executive briefing, surfacing priorities, commitments, and actions that need attention.",
+  architecture: {
+    sourcesLabel: "Information sources",
+    sources: ["Gmail", "Google Calendar", "ClickUp"],
+    orchestration: { label: "Orchestration", name: "n8n" },
+    decision: { label: "Decision layer", name: "OpenAI" },
+    application: { label: "Application", name: "Briefly" },
+  },
+  positioning: "One system, multiple tools, one decision layer.",
+  stack: ["OpenAI", "n8n", "Gmail API", "Google Calendar API", "ClickUp", "APIs", "Python", "React"],
+  live: "",
+  demo: BRIEFLY_DEMO_URL,
+  github: "",
+}
 
 export const projects = [
   {
@@ -61,8 +90,8 @@ export const workflows = [
   },
   {
     id: 3, num: "03",
-    name: "Supplier Compliance Automation",
-    tagline: "Enterprise governance and risk management",
+    name: "Supplier Compliance",
+    tagline: "Governance and risk management",
     problem: "Supplier onboarding is manual, inconsistent, and lacks auditability — creating risk exposure and compliance gaps.",
     solution: "Evaluates each supplier using AI-driven risk scoring combined with rule-based validation for documentation completeness and fraud indicators. Suppliers are automatically routed into Approved, Review, or Rejected pipelines with a full immutable audit trail.",
     tools: ["n8n", "OpenAI GPT-4o", "Google Sheets", "Gmail", "Slack", "Compliance Rules Engine"],

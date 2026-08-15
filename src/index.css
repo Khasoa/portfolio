@@ -56,10 +56,9 @@
   --text-xs:         11px;
   --text-sm:         14px;
   --text-base:       16px;
-  --text-lg:         18px;
-  --text-xl:         clamp(28px, 3.2vw, 38px);
+  --text-xl:         clamp(26px, 3vw, 34px);
   --text-hero:       clamp(42px, 5.2vw, 68px);
-  --type-card-title: clamp(20px, 2.2vw, 24px);
+  --type-card-title: clamp(19px, 2.2vw, 22px);
 
   --leading-tight:   1.15;
   --leading-normal:  1.6;
@@ -142,7 +141,7 @@ select option {
   margin: 0 auto;
 }
 
-.s-wrap--workflow { padding-top: calc(var(--section-y) + 4px); }
+.s-wrap--workflow { padding-top: calc(var(--section-y) + 4px); max-width: 1180px; }
 .s-wrap--skills { padding-top: calc(var(--section-y) + 12px); padding-bottom: calc(var(--section-y) + 16px); }
 .s-wrap--contact { padding-top: calc(var(--section-y) + 8px); padding-bottom: calc(var(--section-y) + 16px); }
 
@@ -223,7 +222,7 @@ select option {
 .site-footer a:hover { color: var(--accent); }
 
 .nav-link {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -367,7 +366,7 @@ select option {
 }
 
 .surface-pill--sm {
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.07em;
   padding: 3px 9px;
 }
@@ -502,7 +501,6 @@ select option {
 @media (max-width: 768px) {
   :root {
     --section-y: clamp(48px, 11vw, 72px);
-    --type-card-title: clamp(18px, 5vw, 22px);
   }
 
   .proj-image-frame {
